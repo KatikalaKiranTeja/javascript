@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/* Q1 */
+console.log("Q1 Output:");
+console.log(a);
+var a = 10;
+// Expected: undefined
+
+/* Q2 */
+console.log("Q2 Output:");
+console.log(b);
+let b = 20;
+// Expected: ReferenceError: Cannot access 'b' before initialization
+
+/* Q3 */
+console.log("Q3 Output:");
+{
+    var x = 5;
+    let y = 10;
+}
+console.log(x);
+console.log(y);
+// Expected: 5
+// ReferenceError: y is not defined
+
+/* Q4 */
+console.log("Q4 Output:");
+function test() {
+    {
+        var a = 1;
+        let b = 2;
+        const c = 3;
+    }
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+test();
+// Expected:
+// 1
+// ReferenceError: b is not defined
+// ReferenceError: c is not defined
+
+/* Q5 */
+console.log("Q5 Output:");
+{
+    a = 10;
+}
+console.log(a);
+// Expected: 10
+
+/* Q6 */
+console.log("Q6 Output:");
+x = 10;
+function x() {}
+console.log(x);
+// Expected: 10
+
+/* Q7 */
+console.log("Q7 Output:");
+var a = 10;
+{
+    var a = 20;
+    let b = 30;
+    console.log(a, b);
+}
+console.log(a);
+// Expected:
+// 20 30
+// 20
+
+/* Q8 */
+console.log("Q8 Output:");
+const num = 5;
+num = 10;
+console.log(num);
+// Expected: TypeError: Assignment to constant variable
+
+/* Q9 */
+console.log("Q9 Output:");
+const person = { name: "John" };
+person.name = "Alice";
+console.log(person);
+// Expected: { name: "Alice" }
+
+/* Q10 */
+console.log("Q10 Output:");
+let x = 100;
+function demo() {
+    console.log(x);
+    let x = 200;
+}
+demo();
+// Expected: ReferenceError: Cannot access 'x' before initialization
+</script>
+
+</body>
+</html>
