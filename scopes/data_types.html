@@ -1,0 +1,83 @@
+<script>
+
+var x = 10;
+let y = 20;
+const z = 30;
+x = 15;
+y = 25;
+// z = 35; // Uncommenting this will cause error
+console.log("Output:", x, y, z); // 15 25 30
+console.log("Answer: B) 15 25 30 — var/let can be reassigned, const cannot\n");
+
+
+var a = 5;
+var a = 10;
+console.log("Output:", a); // 10
+console.log("Answer: B) 10 — var allows redeclaration\n");
+
+
+let a2 = 5;
+// let a2 = 10; // Uncommenting this will throw Error: Identifier 'a2' has already been declared
+// console.log(a2);
+console.log("Answer: C) Error — let cannot be redeclared in the same scope\n");
+
+
+
+{
+    var a3 = 1;
+    let b3 = 2;
+    const c3 = 3;
+}
+console.log("Output a3:", a3); // 1
+// console.log("Output b3:", b3); // Error: b3 is not defined
+// console.log("Output c3:", c3); // Error: c3 is not defined
+console.log("Answer: B) 1 Error Error — var is function scoped, let/const are block scoped\n");
+
+
+
+console.log("Output a3:", a3); // 1 (hoisted var)
+var a3 = 10;
+console.log("Answer: B) undefined — var is hoisted with undefined\n");
+
+console.log("Q6:");
+// console.log(b); // Uncommenting this will throw ReferenceError
+let b = 10;
+console.log("Answer: C) ReferenceError — let is hoisted but in TDZ\n");
+
+
+
+function test() {
+    if (true) {
+        var x7 = 100;
+        let y7 = 200;
+    }
+    console.log("Output x7:", x7); // 100
+    // console.log("Output y7:", y7); // Error: y7 is not defined
+}
+test();
+console.log("Answer: B) 100 Error — y is block scoped, x is function scoped\n");
+
+
+
+// const num; // Uncommenting this will throw SyntaxError: Missing initializer in const declaration
+// num = 50;
+// console.log(num);
+console.log("Answer: C) Error — const must be initialized\n");
+
+
+var x9 = 1;
+let y9 = 2;
+{
+    var x9 = 10;
+    let y9 = 20;
+    console.log("Inside block:", x9, y9); // 10 20
+}
+console.log("Outside block:", x9, y9); // 10 2
+console.log("Answer: B) 10 20 and 10 2 — var overwrites outer x, let is block scoped\n");
+
+
+const arr = [1, 2, 3];
+arr.push(4);
+console.log("Output:", arr); // [1,2,3,4]
+console.log("Answer: B) [1, 2, 3, 4] — const prevents reassignment, but array contents can be changed\n");
+</script>
