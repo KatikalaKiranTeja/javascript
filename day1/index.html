@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">Student profile</h1>
+
+    <p id="p1">Name:__________</p>
+    <p id="p2">Course:____________</p>
+    <p id="p3">City:_______________</p>
+
+    <h3 id="p4">About:</h3>
+    <p id="p5">Lorem ipsum text...</p>
+
+    <script>
+      let a=document.getElementById("head").innerText="Frontend Developer Profile"
+      console.log(a)
+
+      let b=document.getElementById("p1").innerHTML="Your name"
+      console.log(b)
+
+      let c=document.getElementById("p2").innerHTML="Full-stack Development"
+      console.log(c)
+
+      let d=document.getElementById("p3").innerHTML="Hydrebad"
+      console.log(d)
+      
+      let e=document.getElementById("p5").innerHTML="passionate frontend developer learning DOM,JS, and UI design."
+      console.log(e)
+
+
+      let heading=document.getElementById("head").style.color="blue"
+      console.log(heading)
+
+
+      let bold=document.getElementById("p1").style.fontWeight="bold"
+      console.log(bold)
+      let col=document.getElementById("p1").style.color="green"
+      console.log(col)
+
+      let bold1=document.getElementById("p2").style.fontWeight="bold"
+      console.log(bold1)
+      let col1=document.getElementById("p2").style.color="green"
+      console.log(col1)
+
+      let bold2=document.getElementById("p3").style.fontWeight="bold"
+      console.log(bold2)
+      let col2=document.getElementById("p3").style.color="green"
+      console.log(col2)
+
+      let about=document.getElementById("p4").style.backgroundColor="yellow"
+    
+      document.getElementById("p4").style.padding = "10px";     // optional for nice spacing
+      document.getElementById("p4").style.borderRadius = "10px";
+    </script>
+    
+    <!-- <script src="index.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let d = document.createElement("div");
+        console.log(d.tagName);
+
+        let p = document.createElement("p");
+        p.append("Hello ", "World");
+        console.log(p.innerText);
+
+        let div = document.createElement("div");
+        let span = document.createElement("span");
+        div.appendChild(span);
+        console.log(div.children.length);
+
+        let ul = document.createElement("ul");
+        ul.append("Item1");
+        console.log(ul.childNodes.length);
+        // document.body.appendChild(ul)
+
+        let box = document.createElement("div");
+        box.appendChild(document.createElement("p"));
+        console.log(box.firstElementChild.tagName);
+
+        let div1 = document.createElement("div");
+        let p1 = document.createElement("p");
+        div.appendChild(p1);
+        div.removeChild(p1);
+        console.log(div.children.length);
+
+        let parent = document.createElement("div");
+        let child = document.createElement("h1");
+        parent.appendChild(child);
+        console.log(child.parentNode === parent);
+
+        let box1 = document.createElement("div");
+        box1.append("Hello");
+        console.log(typeof box1.firstChild);
+
+        let a = document.createElement("div");
+        let b = document.createElement("span");
+        a.appendChild(b);
+        a.appendChild(document.createElement("p"));
+        console.log(a.childNodes.length);
+
+
+        let div2 = document.createElement("div");
+        let p2 = document.createElement("p");
+        div2.append(p2);
+        div2.append(p2); 
+        console.log(div2.children.length);
+
+        let list = document.createElement("ul");
+        list.innerHTML = "<li>A</li><li>B</li>";
+        console.log(list.children[1].innerText);
+
+
+        let x = document.createElement("p");
+        x.appendChild(document.createTextNode("Hello"));
+        console.log(x.textContent);
+
+    </script>
+</body>
+</html>

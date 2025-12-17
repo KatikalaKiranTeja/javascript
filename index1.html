@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            color: blueviolet;
+        }
+        button{
+            /* border: 2px solid black; */
+            border-radius:5px;
+            cursor: pointer;
+            padding: 10px;
+            width: 90px;
+            margin-top: 10px;
+        }
+        img{
+            width: 250px;
+            margin-top:10px;
+            padding:10px
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let head=document.createElement("h1") //  this is h1 element
+        head.innerHTML="hello javascript"
+        document.body.appendChild(head)
+
+        let remove_btn=document.createElement("button") // this is remove button
+        remove_btn.innerHTML="remove"
+        remove_btn.onclick=function(){
+            document.body.removeChild(head)
+        }
+        document.body.appendChild(remove_btn)
+
+
+        let image_ele=document.createElement("img")  // this is image 
+        image_ele.src="https://image-processor-storage.s3.us-west-2.amazonaws.com/images/3cf61c1011912a2173ea4dfa260f1108/halo-of-neon-ring-illuminated-in-the-stunning-landscape-of-yosemite.jpg"
+        console.log(image_ele)
+        document.body.appendChild(image_ele)
+
+         let arr=['red','blue','orange','green']
+
+         for (let i=0;i<4;i++){
+
+        // Button 1
+            let btn=document.createElement("button")
+            btn.innerHTML=arr[i] // content
+            btn.style.backgroundColor=arr[i]
+            btn.style.color="white"
+            btn.id=i  //id attach cheysanu
+
+        // Button 2
+            let rem_btn=document.createElement("button") //remove button
+            rem_btn.innerHTML="remove" //content
+            rem_btn.style.color=arr[i]
+            rem_btn.style.border=`1px solid ${arr[i]}` 
+
+            rem_btn.onclick=function(){
+                let cur_ele=document.getElementById(i)
+                console.log(cur_ele.parentNode.removeChild(cur_ele))
+                // console.log(card.removeChild(cur_ele))
+            }
+
+           let card=document.createElement("div")
+           card.append(btn,rem_btn) // card lo two btns ni add chesthunnam
+        
+            
+            document.body.append(card) // add all elements at a time
+            
+          
+
+         }
+        
+
+    </script>
+</body>
+</html>

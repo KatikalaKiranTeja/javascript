@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            color: blueviolet;
+        }
+        button{
+            border: 1px solid black;
+            cursor: pointer;
+            padding: 10px;
+            width: 90px;
+            margin-top: 10px;
+        }
+        img{
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>hello JavaScript</h1>
+    <button onclick="check()">navogation</button> -->
+
+    <script>
+        let head_ele=document.createElement("h1")
+        head_ele.innerHTML="Change background color"
+        console.log(head_ele)
+
+        let image_ele=document.createElement("img")
+        image_ele.src="https://image-processor-storage.s3.us-west-2.amazonaws.com/images/3cf61c1011912a2173ea4dfa260f1108/halo-of-neon-ring-illuminated-in-the-stunning-landscape-of-yosemite.jpg"
+        console.log(image_ele)
+
+        document.body.appendChild(head_ele)
+        document.body.appendChild(image_ele)
+
+        // let btn=document.createElement("button")
+        // btn.innerHTML="click me"
+        // btn.onclick=function(){
+        //     document.body.style.backgroundColor="brown"
+        // }
+        // document.body.appendChild(btn)
+
+
+        let arr=['red','blue','orange','green']
+        for(let i=0;i<=3;i++){
+            let btn=document.createElement("button")
+            btn.innerHTML=arr[i]
+            console.log(btn)
+            document.body.appendChild(btn)
+            btn.onclick=function(){
+                document.body.style.backgroundColor=arr[i]
+            }
+        }
+
+    </script>
+</body>
+</html>

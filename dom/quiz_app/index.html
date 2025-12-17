@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        #questions{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+        .card{
+            width: 30vw;
+            /* height: 30vh; */
+            margin: 1px;
+            border: 1px solid black;
+            border-radius: 4px;
+
+        }
+        h1{
+            text-align: center;
+            color:blue
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Quizz Application...</h1>
+    <div><button onclick="changeTheme()">Theme</button></div>
+    <div id="questions"></div>
+
+    <script>
+        // let store=localStorage.getItem("name")
+        // // console.log(store)
+        //  if (store=="kiran"){
+        //         document.body.style.backgroundColor="black"
+        //         document.body.style.color="white"
+        //     }
+        
+        let store=sessionStorage.getItem("name")
+            // console.log(store)
+            if (store=="kiran"){
+                    document.body.style.backgroundColor="black"
+                    document.body.style.color="white"
+                }
+
+
+       
+
+
+        let Questions = ["What is hosting ?","TDZ ?","blockedscope vs functional scope ?","Explain let,var,const ?","deepcopy vs shallowcopy ?"]
+        let questions_container=document.getElementById("questions")
+        for (let i=0;i<Questions.length;i++){
+            console.log(Questions[i])
+
+            let card=document.createElement("div") //card ele
+            card.classList="card"
+            let head=document.createElement("h1") //head ele
+            head.textContent=Questions[i] //content update
+            let text_area_ele=document.createElement("textarea")
+            text_area_ele.rows="7";
+            text_area_ele.cols="30";
+            let save_btn=document.createElement("button")
+            save_btn.textContent="save"
+            card.append(head,text_area_ele,save_btn)
+            questions_container.appendChild(card)
+
+        }
+
+        // function changeTheme(){
+        //     document.body.style.backgroundColor="black"
+        //     document.body.style.color="white"
+        //     localStorage.setItem("name","kiran")
+        //     // console.log()
+        // }
+
+        function changeTheme(){
+            document.body.style.backgroundColor="black"
+            document.body.style.color="white"
+            sessionStorage.setItem("name","kiran")
+            // console.log()
+        }
+
+        
+
+    </script>
+</body>
+</html>

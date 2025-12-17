@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Timer</title>
+  <style>    
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    </style>
+ 
+</head>
+<body>
+
+<h2>Timer: <span id="counter">0</span></h2>
+
+<button id="startBtn">Start</button>
+<button id="stopBtn">Stop</button>
+
+<script>
+  let count = 0;
+  let timer = null;
+
+
+  document.getElementById("startBtn").onclick=function(){
+    if (timer!==null)
+        timer=setInterval(()=>{
+            count++;
+            document.getElementById("counter").innerHTML=count;
+        },1000);    
+  };
+
+  document.getElementById("stopBtn").onclick=function(){
+    clearInterval(timer);
+    timer=null;
+  }
+</script>
+
+</body>
+</html>

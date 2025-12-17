@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFQRh0Bu3tUNFNqnYsozS64_B29-yYkhDHaw&s"); */
+              background: radial-gradient(circle, white, pink, orange,lightgreen);
+            
+            
+
+
+        }
+      
+        h1{
+            color: blueviolet;
+            font-size:40px
+            
+        }
+        button{
+            padding: 5px 10px;
+            /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDoj50mM17IIqJYWImlYTDysfmUIiEoHRgSw&s"); */
+            
+            
+        }
+        p{
+            font-size: 40px;
+            /* border: 2px solid rgb(255, 170, 184);
+            border-radius: 100px; */
+            
+        }
+        #dec{
+            color: red;
+            border: 2px solid red;
+            border-radius: 4px;
+            width: 110px;
+        }
+        #res{
+        color: rgb(255, 174, 0);
+        border: 2px solid rgb(255, 153, 0);
+        border-radius: 4px;
+        width: 110px;
+        }
+        #inc{
+        color: green;
+        border: 2px solid green;
+        border-radius: 4px;
+        width: 110px;
+        }
+    </style>
+
+</head>
+<body>
+   
+    <h1>Counter Application</h1>
+    <p id="count">0</p>
+    <div>
+        <button onclick="Ondecrement()" id="dec"> Decrement</button>
+        <button onclick="Onreset()" id="res">Reset</button>
+        <button onclick="Onincrement()" id="inc">Increment</button>
+    </div>
+
+
+    <script>
+        let click_ele=document.getElementById("count")
+        function Onincrement(){
+            current_count=parseInt(click_ele.innerHTML)+1
+            if (current_count>0){
+                click_ele.style.color="green"
+            }else if(current_count==0){
+                click_ele.style.color="yellow"
+            }
+            click_ele.innerHTML=current_count
+
+        }
+        function Onreset(){
+            click_ele.innerHTML=0
+            click_ele.style.color="yellow"
+        }
+
+        function Ondecrement(){
+            
+            current_count=parseInt(click_ele.innerHTML)-1
+            if(current_count<0){
+                click_ele.style.color="red"
+            }else if(current_count==0){
+                click_ele.style.color="yellow"
+            }
+           
+            click_ele.innerHTML=current_count
+        }
+    </script>
+</body>
+</html>

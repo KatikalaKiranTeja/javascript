@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <span id="name"></span><br>
+        <input type="text" placeholder="Enter your name"><br>
+        <span id="password"></span><br>
+        <input type="password" placeholder="Enter your password">
+        <select  id="category">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        <button type="submit">Save</button>
+    </form>
+
+    <script>
+        // first 1: form default behaviour ni prevent cheyyali
+            // preventDefault
+            //first 2: first form ni access cheyyali
+            //submit
+        //first:2 blur
+        let form_ele=document.getElementById("form")
+        form_ele.addEventListener("submit",function(event){
+            event.preventDefault()
+            console.log("form submitted successfully")
+        })
+
+        //input elements ni access chedham
+        let input_ele=document.getElementsByTagName("input")
+        //first input ele ki blur eventlistener attach
+        input_ele[0].addEventListener("blur",function(e){
+            // console.log(e)
+            if(e.target.value.length<3){
+                let name_msg=document.getElementById("name")
+                name_msg.innerHTML="name should be atleast "
+                name_msg.style.fontSize="5px"
+                name_msg.style.color="red"
+
+            }
+        })
+        input_ele[1].addEventListener("focus",function(e1){
+            if(e1.target.value.length<3){
+                let name_msg=document.getElementById("password")
+                name_msg.innerHTML="password atleast 8 charecters "
+                name_msg.style.fontSize="5px"
+                name_msg.style.color="red"
+
+            }
+        })
+
+        //category ele ki change eventlistener add chesthunnam
+        let category_ele=document.getElementById("category")
+        category_ele.addEventListener("change",function(k){
+            console.log(k.target.value)
+        })
+    </script>
+</body>
+</html>

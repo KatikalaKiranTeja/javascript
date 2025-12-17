@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>hii all</h1>
+        <!-- <button id="btn">Click me</button> -->
+    </div>
+
+    <script>
+        // document.getElementById("btn").addEventListener("keyleft", function () {
+        //     document.body.style.backgroundColor = "green";
+        let btn_ele=document.createElement("botton")
+        btn_ele.innerHTML="clickme"
+        // btn_ele.onclick=function(){
+        //     document.body.style.backgroundColor="red"
+        // }
+        // document.body.appendChild(btn_ele)
+
+        btn_ele.addEventListener("click",function(){
+            document.body.style.backgroundColor="blue"
+        })
+        document.body.appendChild(btn_ele)
+        
+          
+        // });
+    </script>
+</body>
+</html>
