@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Events Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .message {
+            margin-top: 5px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Simple Form</h2>
+
+<form id="myForm">
+    <!-- Name Field -->
+    <label>Name:</label><br>
+    <input type="text" id="name"><br>
+    <div id="nameMsg" class="message"></div><br>
+
+    <!-- Email Field -->
+    <label>Email:</label><br>
+    <input type="text" id="email"><br>
+    <div id="emailMsg" class="message"></div><br>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+</form>
+
+<div id="formMsg" class="message"></div>
+
+<script>
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const form = document.getElementById("myForm");
+
+    const nameMsg = document.getElementById("nameMsg");
+    const emailMsg = document.getElementById("emailMsg");
+    const formMsg = document.getElementById("formMsg");
+
+    // Name field focus event
+    nameInput.addEventListener("focus", function () {
+        nameMsg.textContent = "Name field focused";
+    });
+
+    // Name field blur event
+    nameInput.addEventListener("blur", function () {
+        if (nameInput.value.trim() === "") {
+            nameMsg.textContent = "Name cannot be empty";
+        } else {
+            nameMsg.textContent = "Name looks good!";
+        }
+    });
+
+    // Email change event
+    emailInput.addEventListener("change", function () {
+        if (emailInput.value.includes("@")) {
+            emailMsg.textContent = "Valid email entered";
+        } else {
+            emailMsg.textContent = "Invalid email";
+        }
+    });
+
+    // Form submit event
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        formMsg.textContent = "Form submission prevented. Fix errors first.";
+    });
+</script>
+
+</body>
+</html>
